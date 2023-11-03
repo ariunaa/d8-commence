@@ -1,0 +1,24 @@
+#block-searchform-2 {  position: fixed; top: 75px; bottom: 0; left: 0; right: 0; z-index: 999; background-color: white;
+    form { position: absolute; top: 40%; left: 20%; right: 20%; }
+    .form-control { border-radius: 0; border: none; border-bottom: 2px solid black; border-top: 1px solid white; box-shadow: none; font-size: 25px; height: auto; 
+        input { line-height: 25px; }
+    }
+    .btn-primary { color: black; background-color: transparent; border-color: transparent; font-size: 20px; }
+}
+
+#block-searchform {
+    input { background-color: #dddddd; border: none; border-radius: 0; 
+        &::placeholder { color: black; }
+    }
+
+    button.form-submit { color: $colorBlue; background-color: transparent; border: none; font-size: 22px; }
+
+}
+
+body.toolbar-fixed #block-searchform-2 { top: 154px; }
+
+
+@media (min-width: 768px) {
+    #block-searchform-2 { top: 50px; }
+    body.toolbar-fixed #block-searchform-2 { top: 129px; }
+}

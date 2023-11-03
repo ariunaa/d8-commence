@@ -1,0 +1,13 @@
+div.alert { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: 40px; margin: 0; padding: 10px 0; border: none; border-radius: 0;
+    .container { position: relative; }
+    .close { opacity: 1; text-shadow: none; color: white; }
+    a.alert-view-more { display: inline-block; background-color: black; padding: 1px 8px; color: white; position: absolute; right: 40px; font-size: 10px; }
+    p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-right: 100px; }
+}
+div.alert-warning { background-color: $colorAlert; color: white; font-size: 16px; font-weight: $fontWeightBold; }
+
+body.toolbar-fixed div.alert { display: none !important; }
+
+@media (min-width: 768px) {
+    div.alert a.alert-view-more { font-size: 16px; right: 50px; }
+}

@@ -1,0 +1,82 @@
+header.navbar { border-radius: 0; padding: 0; margin-bottom: 0;  background-color: white; border: none; border-bottom: 1px solid $colorSpecialInstructionsBackground; 
+    height: 50px; opacity: 0.95; position: fixed; top: 0; z-index: 99; width: 100%; 
+    
+    .navbar-brand { font-size: 15px; text-transform: uppercase; color: $colorBlue; padding-left: 0; letter-spacing: 4px; padding-top: 15px; 
+        span.site-year { color: black; font-weight: $fontWeightBold; display: none !important; }
+    }
+
+    .navbar-toggle { display: block; }
+    #navbar-collapse { padding: 30px 0 20px 0; position: fixed; width: 100%; background-color: white; bottom: 0px; top: 50px; left: 0; overflow: auto !important; }
+    .navbar-header { float: none; margin-left: 0; margin-right: 0; }
+    .navbar-collapse.collapse { display: none !important; }
+    .navbar-collapse.collapse.in { display: block !important; }
+}
+
+body { padding-top: 55px; margin-top: 0; }
+
+body.has-site-alert  { padding-top: 90px; 
+    header.navbar { top: 40px; }
+    #navbar-collapse { top: 90px; }
+}
+
+body.toolbar-fixed {
+    header.navbar { top: 79px; }
+    #navbar-collapse { top: 154px; }
+}
+ 
+#block-menusearchlogo, #navbar #menu-status { float: right; padding-top: 7px; font-size: 16px;
+    span { color: $colorBlue; display: inline-block; }
+    span.icon { cursor: pointer; padding-top: 8px; color: white; background-color: $colorBlue; text-align: center; border-radius: 50%; margin-right: 5px; height: 33px; width: 33px; }
+    .collapse.in { display: none; }
+}
+
+#navbar {
+    #menu-status {
+        span { cursor: pointer; }
+        .show-if-collapsed { display: none; }
+        .collapsed .show-if-collapsed { display: inline-block; }
+        .collapsed .hide-if-collapsed { display: none; }
+    }
+    
+    #menu-status.menu-shown .hide-if-menu-shown { display: none; }
+    #menu-status.search-shown .hide-if-search-shown { display: none; }
+}
+
+nav.tabs { margin: 20px 0; }
+a#mit-logo img { height: 36px; position: relative; top: -2px; left: 2px;  }
+
+@media (min-width: 440px) {
+    header.navbar { 
+        .navbar-brand { font-size: 18px; padding-top: 16px; margin-left: 0 !important; 
+            span.site-year { display: inline; }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    header.navbar { 
+        .navbar-brand { font-size: 20px; padding-top: 18px; }
+    }
+
+    #block-menusearchlogo, #navbar div.pull-right { padding-top: 10px; font-size: 14px;
+        span.icon { padding: 6px; border-radius: 50%; margin-right: 5px; }
+    }
+
+    body.has-site-alert  { padding-top: 90px; 
+        header.navbar { top: 40px; }
+        #navbar-collapse { top: 90px; }
+        #block-searchform-2 { top: 90px; }
+    }
+
+    body.toolbar-fixed {
+        header.navbar { top: 79px; }
+        #navbar-collapse { top: 129px; }
+    }
+
+    // body {
+    //     header.navbar { top: 0px; 
+    //         #navbar-collapse { top: 50px; }
+        
+    //     }
+    //}    
+}

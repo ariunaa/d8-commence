@@ -1,0 +1,50 @@
+#views-exposed-form-schedule-page-1 {
+    button#dropdownMenu1 { border-radius: 0; width: 100%; text-align: left; border-color: black; box-shadow: none;
+        &:hover, &:focus { background-color: white; }
+    }
+
+    div.dropdown {
+        div.dropdown-menu { width: 100%; max-height: 300px; overflow-y: scroll; border-radius: 0; margin-top: -1px; border-color: black; box-shadow: none; 
+            ul { list-style: none; }
+        }
+
+        span.caret { float: right; border-top-width: 8px; border-right-width: 8px; border-left-width: 8px; color: $colorBlue; margin-top: 5px; }
+    }
+
+    div.dropdown.open {
+        
+        button#dropdownMenu1 { border-radius: 0; width: 100%; text-align: left; border-bottom: none; background-color: white; }
+        div.dropdown-menu { border-top: none; 
+            > ul { padding-left: 13px; 
+                > li { margin-bottom: 15px; }
+                ul { padding-left: 0; }
+            }
+
+        }
+
+        ul li label { font-weight: $fontWeightExtraBold; }
+        ul ul li label { font-weight: $fontWeightRegular; }
+    }
+
+    li.hide-checkbox > .form-item input { display: none; }
+}
+
+.bef-exposed-form {
+    fieldset {  
+        legend { font-size: 14px; font-weight: $fontWeightExtraBold; border-bottom: none; margin-bottom: 5px; }
+    }
+    div.checkbox { display: block; }
+    .form-submit { margin-top: 20px; }
+}
+
+.view-filters.form-group { border-bottom: 1px solid black; margin-bottom: 0; padding-bottom: 15px; }
+
+div.view-header { margin-bottom: 20px; }
+.btn-info, .btn-info:hover { background-color: $colorBlue; border-color: $colorBlue; border-radius: 0; background-color: $colorOrange; border-color: $colorOrange;  }
+.view-schedule {
+    .views-row { margin-bottom: 30px; }
+    h2 { color: $colorBlue; }
+    .views-field { margin-bottom: 10px; 
+        .views-label, a { font-weight: $fontWeightExtraBold; }
+    }
+}

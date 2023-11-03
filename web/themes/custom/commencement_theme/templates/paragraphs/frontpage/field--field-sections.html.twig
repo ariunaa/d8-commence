@@ -1,0 +1,13 @@
+<div id="frontpage-vertical-slider">
+    {% for item in items %}
+        <section id="slide{{loop.index - 1}}" {{ item.attributes.addClass('slide', 'clearfix', loop.index % 2 == 0 ? 'even' : 'odd')}}
+            {{ item.content }}
+        </section>
+    {% endfor %}
+
+    <div id="slide-indicator">
+        {% for item in items %}
+        <span id="slide-indicator-{{loop.index - 1}}" class="slide-indicator {{loop.first ? ' active' : ''}}"></span>
+        {% endfor %}
+    </div>    
+</div>

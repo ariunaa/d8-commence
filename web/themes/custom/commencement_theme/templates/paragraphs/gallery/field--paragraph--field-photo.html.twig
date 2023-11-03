@@ -1,0 +1,3 @@
+{% for item in items %}
+    <a href="{{file_url(item.content['#item'].entity.uri.value)}}" data-lightbox="gallery" data-title="{{item.content['#item'].title|escape}}">{{ item.content }}</a>
+{% endfor %}

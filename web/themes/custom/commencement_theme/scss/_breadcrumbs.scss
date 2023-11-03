@@ -1,0 +1,4 @@
+.breadcrumb { background-color: white; padding-left: 0; font-size: 14px; 
+     > li + li:before { content: ">"; }
+     li.active { display: none; }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Photonics",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "author": "Peter Kudlicka",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "glob-expand": "^0.2.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-livereload": "^4.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "lodash": "^4.17.4",
+    "mkdirp": "^3.0.1",
+    "path": "^0.12.7",
+    "swig": "^1.4.2"
+  }
+}

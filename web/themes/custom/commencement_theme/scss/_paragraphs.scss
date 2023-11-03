@@ -1,0 +1,41 @@
+div.paragraph { margin-bottom: 20px; 
+    p { text-align: left; }
+
+    .field--name-field-caption { font-size: 14px; font-style: italic; }
+    img { width: 100%; }
+
+    div.special-instructions { padding: 10px; }
+
+    .note, .dont-forget { background-color: $colorDontForget; padding: 10px; font-size: 14px; line-height: 18px; font-weight: $fontWeightBold;
+        &:before { content: "\f061"; font-family: "Font Awesome 5 Free"; margin-right: 5px; font-weight: 900; }
+    }
+}
+
+div.paragraph--type--special-instructions-single- { padding: 10px; font-size: 14px; line-height: 18px; font-weight: $fontWeightBold; border: 1px solid black; 
+    .field--name-field-title { font-size: 20px; font-weight: $fontWeightExtraBold; margin-bottom: 10px; line-height: 25px; }
+    span { margin-right: 5px; }
+}
+
+div.field.special-instructions-title { padding: 10px; color: white; background-color: black; font-size: 20px; font-weight: $fontWeightBold;
+    span { margin-right: 10px; }
+}
+
+.page-node-type-faq { 
+    p { font-size: 16px; line-height: 21px; }
+    div.field.special-instructions-title { padding: 10px 0; color: black; font-size: 20px; font-weight: $fontWeightBold; background-color: white; 
+        span { display: none; }
+    }
+}
+
+div.paragraph--type--special-instructions-multiple { background-color: $colorSpecialInstructionsBackground; 
+    p { margin-bottom: 10px; padding: 10px; }
+    .field--name-field-content { font-size: 14px; line-height: 18px; font-weight: $fontWeightBold; }
+    .panel-heading { background-color: $colorSpecialInstructionsBackground; border: none; border-bottom: 1px solid black; padding: 10px 35px 10px 15px;
+        a { font-size: 16px; text-decoration: none; font-weight: $fontWeightExtraBold; 
+            i.fa { margin-right: -25px; }
+        }
+    }
+    .panel { border: none; }
+} 
+
+.panel-group .panel a:not(.collapsed) i:before { content: "\f068"; }

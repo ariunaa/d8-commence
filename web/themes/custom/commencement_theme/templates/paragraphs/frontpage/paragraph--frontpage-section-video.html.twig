@@ -1,0 +1,26 @@
+{%
+  set classes = [
+    'clearfix',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+  ]
+%}
+{% block paragraph %}
+    {% block content %}
+      <div class="container">
+        <div class="photo video">
+            <div class="frame hidden-xs">
+                {{ content.field_video }}
+            </div>
+          <div class="frame visible-xs-block">
+            {{ content.field_image }}
+          </div>
+        </div>
+        <div class="info">
+          {{content.field_info}}
+        </div>
+      </div>
+    {% endblock %}
+{% endblock paragraph %}

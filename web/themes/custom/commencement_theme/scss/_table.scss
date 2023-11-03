@@ -1,0 +1,72 @@
+
+
+/*  responsive tables start */
+.commencement-table table {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .commencement-table table tr {
+    border-bottom: 1px solid #ccc;
+    padding: .35em;
+    vertical-align: top;
+  }
+  .commencement-table table th,
+  .commencement-table table td {
+    padding: .625em;
+  }
+  .commencement-table table th {
+    letter-spacing: .1em;
+    background-color: #333;
+    color: #fff;
+    border-left: 1px solid #CCC;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+  .commencement-table table {
+      border: 0;
+  }
+  .commencement-table table caption {
+      font-size: 1.3em;
+  }
+  .commencement-table table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+  }
+  .commencement-table table th {
+    background-color: #333;
+    color: #fff;
+  }
+  .commencement-table table tr {
+      border-bottom: 2px solid #000;
+      display: block;
+      margin-bottom: 20px;
+      padding:0;
+  }
+  .commencement-table table td {
+      border-bottom: 1px solid #ccc;
+      display: block;
+      font-size: .8em;
+      text-align: left;
+  }
+  .commencement-table table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      width:100%;
+  }
+  .commencement-table table td:last-child {
+      border-bottom: 0;
+  }
+  }
+  /*  responsive tables end */
+  

@@ -1,0 +1,45 @@
+{#
+  Themes Views' default multi-select element as a set of checkboxes.
+
+  Available variables:
+    - element: The collection of checkboxes.
+    - children: An array of keys for the children of element.
+    - is_nested: TRUE if this is to be rendered as a nested list.
+    - depth: If is_nested is TRUE, this holds an array in the form of
+      child_id => nesting_level which defines the depth a given element should
+      appear in the nested list.
+#}
+
+{% set is_dropdown = element['#name'] == "field_school_department_target_id" ? true : false %}
+
+{% set classes = [
+  'form-checkboxes',
+  is_nested ? 'bef-nested',
+  show_select_all_none ? 'bef-select-all-none',
+  show_select_all_none_nested ? 'bef-select-all-none-nested',
+  is_dropdown ? 'dropdown'
+]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+    {% if is_dropdown %}
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Select<span class="caret"></span></button>  
+    <div class="dropdown-menu">
+    {% endif %}
+
+    {% set current_nesting_level = 0 %}
+    {% for child in children %}
+      {% set item = attribute(element, child) %}
+      {% if is_nested %}
+          {% set new_nesting_level = attribute(depth, child) %}
+          {% set hide_checkbox_class = attribute(depth, child) == 0 and attribute(depth, children[loop.index]) == 1 ? 'hide-checkbox' : '' %}
+          {% include 'nested-elements.html.twig' %}
+          {% set current_nesting_level = new_nesting_level %}
+      {% else %}
+          {{ item }}
+      {% endif %}
+    {% endfor %}
+    {% if is_dropdown %}    
+    </div>
+    {% endif %}
+</div>

@@ -1,0 +1,23 @@
+--- web/modules/contrib/imce/src/Plugin/ImcePlugin/Delete.php	2020-06-24 10:44:17.617864300 +0200
++++ web/modules/contrib/imce/src/Plugin/ImcePlugin/Delete.php	2020-06-24 10:46:27.605527200 +0200
+@@ -62,7 +62,7 @@
+    */
+   public function deleteItems(ImceFM $fm, array $items) {
+     $success = [];
+-    $ignore_usage = $fm->getConf('ignore_usage', FALSE);
++    $ignore_usage = $fm->getConf('ignore_usage', TRUE);
+     foreach ($items as $item) {
+       if ($uri = $item->getUri()) {
+         $result = $item->type === 'folder' ? $this->deleteFolderUri($uri, $ignore_usage, !$item->getPermission('delete_files')) : $this->deleteFileUri($uri, $ignore_usage);
+--- web/modules/contrib/imce/src/Plugin/ImcePlugin/Core.php	2020-06-24 10:44:12.224801200 +0200
++++ web/modules/contrib/imce/src/Plugin/ImcePlugin/Core.php	2020-06-24 10:46:22.706431100 +0200
+@@ -46,7 +46,8 @@
+       }
+       if ($folder->getPermission('browse_subfolders')) {
+         foreach ($folder->subfolders as $name => $subfolder) {
+-          $content['subfolders'][$name] = $fm->getFolderProperties($uri_prefix . $name);
++          if (preg_match('/^(\d{4}-\d{2}|inline)/m', $name) == 1)
++            $content['subfolders'][$name] = $fm->getFolderProperties($uri_prefix . $name);
+         }
+       }
+       $fm->addResponse('content', $content);

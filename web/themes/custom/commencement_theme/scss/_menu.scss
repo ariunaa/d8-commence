@@ -1,0 +1,56 @@
+#block-menu-main {  margin-bottom: 20px; 
+    ul.menu { margin-left: -15px;  
+        > li { width: 100%;  }
+        a { color: $colorOrange; font-size: 24px; font-weight: $fontWeightExtraBold; }
+    }
+
+    ul.submenu { list-style-type: none; padding-left: 15px; line-height: 30px;
+        a { font-size: 20px; font-weight: $fontWeightBold; display: inline-block; width: calc(100% - 20px); padding: 3px 5px; text-decoration: none;}
+        a:before { content: "\f0c8"; font-family: "Font Awesome 5 Free"; color: $colorBlue; font-size: 12px; margin-right: 5px; bottom: 2px; position: relative; }
+    }
+
+    span.fas { color: $colorBlue; }
+    a:hover, a.is-active { background-color: $colorBlue; color: white !important; 
+        &:before { color: white !important; }
+    }
+    
+}
+
+#block-mainnavigation { font-size: 16px; font-weight: $fontWeightBold;
+    li { display: block; float: none; padding-left: 18px; margin-bottom: 8px;
+        a { padding: 5px 0; display: inline; 
+            &:hover { color: $colorLink; background: transparent; }
+        }
+        span { color: $colorBlue; font-size: 12px; position: relative; bottom: 1px; margin-right: 3px; margin-left: -18px; }
+        ul { padding-left: 15px; font-size: 14px; 
+            span { display: none; }
+        }
+    }
+
+    li.active > a { color: $colorBlue; }
+}
+
+#block-shortcuts { margin-left: -15px;
+    li { border-bottom: 1px solid #ccc; }
+    a { font-family: 'Nunito Sans'; font-size: 20px; font-weight: $fontWeightBold; line-height: 30px; }
+    a:before { font-family: "Font Awesome 5 Free"; color: $colorBlue; margin-right: 5px; }
+    a.fab:before { font-family: "Font Awesome 5 Brands"; }
+}
+
+#block-home { color: $colorBlue; font-size: 20px; margin-bottom: 30px; 
+    span { color: $colorBlue; }
+    a { font-weight: $fontWeightBold; }
+}
+
+.collapsing {
+    transition: none;
+    display: none;
+}
+@media (min-width: 576px) {
+    #block-menu-main { float: left; width: 66%; }
+    #block-shortcuts { float: right; width: 33%; }
+}
+
+@media (max-width: 767px) {
+    #block-mainnavigation { margin-left: 15px; }
+}

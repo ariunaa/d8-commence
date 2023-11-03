@@ -1,0 +1,23 @@
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+  {{ q }}
+{% endif %}
+<div class="form--inline form-inline clearfix">
+    <div class="row">
+        <div class="col-sm-4">
+            {{ form.field_degree_type_target_id }}
+        </div>
+        <div class="col-sm-8">
+            {{ form.field_school_department_target_id }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            {{ form.actions }}
+            {{ form|without('field_degree_type_target_id', 'field_school_department_target_id', 'actions') }}
+        </div>
+    </div>
+</div>

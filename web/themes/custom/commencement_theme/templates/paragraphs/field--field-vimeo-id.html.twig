@@ -1,0 +1,15 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    'embed-responsive', 'embed-responsive-16by9'
+  ]
+%}
+
+{% for item in items %}
+  <div{{ attributes.addClass(classes, 'field--item') }}>
+      <iframe src="https://player.vimeo.com/video/{{item.content}}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
+{% endfor %}

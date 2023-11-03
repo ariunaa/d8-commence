@@ -1,0 +1,15 @@
+#footer-wrapper { padding-bottom: 20px;}
+
+footer.footer { color: black; margin-top: 20px; border-top: 5px solid $colorBorder; padding: 15px 0; font-weight: $fontWeightBold;
+        a { color: $colorLink; }
+}
+
+.path-frontpage {
+    footer { color: white; 
+        a { color: white; text-shadow: 1px 1px 5px black; }
+    }
+}
+
+@media (min-width: 768px) {    
+    .path-frontpage #footer-wrapper { width: 100%; position: fixed; bottom: 20px; padding-bottom: 0; }
+}

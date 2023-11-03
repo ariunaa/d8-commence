@@ -1,0 +1,12 @@
+{% set classes = [ 'panel-group', 'paragraph', 'paragraph--type--' ~ paragraph.bundle|clean_class, view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class ] %}
+
+{% block paragraph %}
+    {% block content %}
+        <div class="field special-instructions-title"><span class="fa fa-exclamation-circle"></span>{{ content.field_title.0|render }}</div>
+        <div{{ attributes.addClass(classes) }} id="accordion" role="tablist" aria-multiselectable="true">
+            {{ content|without('field_title') }}
+        </div>
+    {% endblock %}
+{% endblock paragraph %}
+
+

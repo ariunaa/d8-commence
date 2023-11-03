@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+function commencement_theme_menu_link__left_menu(array $variables) 
+{
+    $element = $variables['element'];
+    $sub_menu = '';
+    $spanElement = '';
+  
+    if ($element['#below']) 
+    {
+        $sub_menu = drupal_render($element['#below']);
+        $spanElement = '<span class="submenu fas fa-plus-square"></span>';
+    }
+
+    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+    return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $spanElement . $sub_menu . "</li>\n";
+  }
+
+function commencement_theme_form_views_exposed_form_alter(&$form, $form_state, $form_id)
+{
+    $x = $form_id;
+}
+
+
+function commencement_theme_preprocess_page(&$variables) 
+{
+    $node = \Drupal::routeMatch()->getParameter('node');
+
+    if ($node instanceof \Drupal\Core\Entity\EntityInterface) {    
+        $typeName = $node->bundle();
+
+        if ($typeName == 'basic_page_full_width')
+            unset($variables['page']['sidebar_first']);
+    }
+}

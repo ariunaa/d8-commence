@@ -1,0 +1,24 @@
+// div.archive-grid { margin-bottom: 15px; padding: 0; margin-left: 15px; margin-right: 15px; background-color: $colorGridBackground; color: black; }
+// div.grid div.row { display: flex; } 
+
+
+div.views-view-grid  { display: flex; //margin: 0 -15px; 
+    .card { margin: 0 5px; background-color: $colorGridBackground; font-size: 14px; font-weight: $fontWeightBold; /*flex-basis: 0; flex-grow: 1;*/ width: calc(25% - 10px);
+        a { color: black; }
+        .views-field-field-grid-photo { margin-bottom: 10px; 
+            .field-content { padding: 0;  }
+        }
+        .views-field-title, .views-field-field-speaker-info { margin: 5px 10px; line-height: 18px; }
+        .views-field-title { font-weight: $fontWeightExtraExtraBold; }
+    }
+
+    .card:hover { background-color: black; color: white;
+        a { color: white; }
+    }
+}
+
+@media (max-width: 768px) {
+    div.views-view-grid  { flex-wrap: wrap;
+        .card { width: calc(50% - 10px); }
+    }
+}

@@ -1,0 +1,31 @@
+name: commence
+recipe: drupal8
+config:
+  webroot: web
+  composer_version: '2.5.8'
+services:
+  node:
+    type: node:18
+    build:
+      - npm install
+      - gulp
+    globals:
+      gulp-cli: latest
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+tooling:
+  npm:
+    service: node
+  gulp:
+    service: node
+  drush:
+    service: appserver
+    cmd:
+      - "drush --root=/app/web/"
+  composer:
+    service: appserver
+    cmd:
+      - "php -d memory_limit=-1 /usr/local/bin/composer --working-dir=/app/web/"
+ 

@@ -1,0 +1,16 @@
+{% set classes = [ 'row', 'paragraph', 'paragraph--type--' ~ paragraph.bundle|clean_class, view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class ] %}
+
+{% block paragraph %}
+    {% block content %}
+      <div{{ attributes.addClass(classes) }}>
+          <div class="col-sm-6">
+              {{content.field_content_left_column}}
+          </div>
+
+          <div class="col-sm-6">
+              {{content.field_content_right_column}}
+          </div>
+      </div>
+    {% endblock %}
+{% endblock paragraph %}
+
